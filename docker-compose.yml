@@ -1,0 +1,25 @@
+version: "3.9"
+services:
+  backend:
+    build:
+      context: ./web-app-RP/pdf-protector/backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./web-app-RP/pdf-protector/backend/uploads:/app/uploads
+    depends_on:
+      - testing
+
+  testing:
+    build:
+      context: ./web-app-RP/testing/server
+    ports:
+      - "4000:4000"
+    volumes:
+      - ./web-app-RP/testing/server/uploads:/app/uploads
+
+  client:
+    build:
+      context: ./web-app-RP/ui-testing/client
+    ports:
+      - "8080:3000" # Expose React app on localhost:8080

@@ -1,0 +1,21 @@
+# Node.js dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Docker files
+*.pid
+*.tar
+
+# Python files (if applicable)
+*.pyc
+__pycache__/
+
+# Uploads or temporary files
+uploads/
+
+# OS files
+.DS_Store
+Thumbs.db
